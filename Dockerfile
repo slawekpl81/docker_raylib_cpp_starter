@@ -8,13 +8,19 @@ RUN apt update && \
     cmake \
     ninja-build \
     wget \
+    ca-certificates \
     libgl1-mesa-dev \
     libx11-dev \
     libasound-dev \
+    libxrandr-dev \
+    libxinerama-dev \
+    libxcursor-dev \
+    libxi-dev \
+    git \
     vim \
     && \
     # 3. Czyszczenie cache APT i usuwanie niepotrzebnych plików
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app

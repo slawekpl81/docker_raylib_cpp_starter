@@ -1,5 +1,5 @@
 docker build -t slk-cpp-builder .
-docker run --rm -it -v "&{PWD}:/usr/src/app" slk-cpp-builder
+docker run --rm -it -v ${PWD}:/usr/src/app slk-cpp-builder
 
     in container:
         conan profile detect --force
