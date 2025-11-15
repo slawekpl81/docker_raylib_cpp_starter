@@ -1,0 +1,29 @@
+docker build -t slk-cpp-builder .
+docker run --rm -it -v "&{PWD}:/usr/src/app" slk-cpp-builder
+
+    in container:
+        conan profile detect --force
+        conan profile show default
+        conan install . --output-folder=build --build=missing
+
+
+        mkdir build
+        cd build
+        cmake ..                cmake -G "Ninja" ..
+        make -j4                ninja
+
+     ---------   GIT   -----------
+# Ustawienie nazwy użytkownika
+git config --global user.name "Twoja Nazwa"
+
+# Ustawienie adresu e-mail
+git config --global user.email "twoj.email@example.com"
+
+git init
+git status
+git add .
+git commit -m "commit message"
+git remote add origin https://github.com/dsfdsffdsf.git
+git branch -M master (albo main)
+git push -u origin master
+git pull
